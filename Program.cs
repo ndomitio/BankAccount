@@ -49,7 +49,7 @@ namespace BankAccount
                     case 1:
                         {
                             Console.Clear();
-                            Console.WriteLine(userName + "has account #" + userAccountNumber + ".  Currently has " + NickChecking.AccountBalance + " in checking account and "
+                            Console.WriteLine(NickChecking.AccountHolder + "has account #" + userAccountNumber + ".  Currently has " + NickChecking.AccountBalance + " in checking account and "
                                 + NickSaving.AccountBalance + " in savings account.");
                             break;
                         }

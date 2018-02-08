@@ -13,6 +13,7 @@ namespace BankAccount
         private int accountNumber;
         private double accountBalance;
         private string accountType;
+        private string accountHolder;
 
         //fields
 
@@ -34,12 +35,24 @@ namespace BankAccount
             set { this.accountType = value; }
 
         }
+
+        public string AccountHolder
+        {
+            get { return this.accountHolder; }
+            set { this.accountHolder = value; }
+        }
         //constructors
 
         public Account()
         {
             //default constructor
         }
+
+        public Account(string accountHolder)
+        {
+            this.accountHolder = accountHolder;
+        }
+
 
         public Account(int accountNumber, int accountBalance, string accountType)
         {
@@ -59,15 +72,16 @@ namespace BankAccount
             Console.WriteLine("How much would you like to deposit?");
             double depositAmount = int.Parse(Console.ReadLine());
             accountBalance += depositAmount;
-            Console.WriteLine("You now have " +accountBalance+ "in your account.");
+            Console.WriteLine("You now have " + accountBalance + "in your account.");
         }
 
         public virtual void WithdrawMoney()
         {
             Console.WriteLine("How much would you like to withdraw?");
             double withdrawAmount = double.Parse(Console.ReadLine());
-            if (accountBalance>withdrawAmount)
-            { accountBalance -= withdrawAmount;
+            if (accountBalance > withdrawAmount)
+            {
+                accountBalance -= withdrawAmount;
                 Console.WriteLine("You now have " + accountBalance + "remaining.");
             }
             else { Console.WriteLine("You currently do not have enough funds to process transaction."); }

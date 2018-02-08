@@ -13,7 +13,7 @@ namespace BankAccount
         private int checkingAccountNumber;
         private double checkingAccountBalance;
         private string personalCheckingAccount;
-
+        private string userName;
 
         //properties
 
@@ -35,6 +35,12 @@ namespace BankAccount
             set { this.personalCheckingAccount = "Checking"; }
 
         }
+
+        public string UserName
+        {
+            get { return this.userName; }
+            set { this.userName = value; }
+        }
         //constructors
 
         public CheckingAccount ()
@@ -42,7 +48,7 @@ namespace BankAccount
             //default constructor
         }
 
-        public CheckingAccount (int checkingAccountNumber, double checkingAccountBalance)
+        public CheckingAccount(int checkingAccountNumber, double checkingAccountBalance) : base("nick")
         {
             this.checkingAccountNumber = checkingAccountNumber;
             this.checkingAccountBalance = checkingAccountBalance;
