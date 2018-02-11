@@ -10,10 +10,10 @@ namespace BankAccount
     {
         //properties
 
-        private int accountNumber;
-        private double accountBalance;
-        private string accountType;
-        private string accountHolder;
+        protected int accountNumber;
+        protected double accountBalance;
+        protected string accountType;
+        protected string accountHolder;
 
         //fields
 

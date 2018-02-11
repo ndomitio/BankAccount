@@ -14,12 +14,17 @@ namespace BankAccount
             // create base class first
             //create derived classes next
             //create menu 
-
+            
             int userChoice;
             Client Nick = new Client(true, true, true);
-            CheckingAccount NickChecking = new CheckingAccount(1001, 150.00);
+            ObjectListPractice Pete = new ObjectListPractice();
+            ObjectListPractice Marc = new ObjectListPractice();
+            Marc.AllClients.Add(Nick);
+            Pete.AllClients.Add(Nick);
+            CheckingAccount NickChecking = new CheckingAccount(1001, 150.00, string.Empty);
             SavingsAccount NickSaving = new SavingsAccount(5005, 1000.00);
-
+            Console.WriteLine("Please enter your name");
+            NickChecking.AccountHolder = Console.ReadLine(); 
 
             if ((Nick.HasCheckingAccount == true) || (Nick.HasSavingsAccount == true))
             {
@@ -30,10 +35,12 @@ namespace BankAccount
                 Console.WriteLine("You need an account first!");
             }
 
-            Console.WriteLine("Enter your name:");
-            string userName = Console.ReadLine();
+
+            //Console.WriteLine("Enter your name:");
+            //string userName = Console.ReadLine();
             Console.WriteLine("Enter your account number");
-            int userAccountNumber = int.Parse(Console.ReadLine());
+            int userID = int.Parse(Console.ReadLine());
+
             do
             {
                 
@@ -49,7 +56,7 @@ namespace BankAccount
                     case 1:
                         {
                             Console.Clear();
-                            Console.WriteLine(NickChecking.AccountHolder + "has account #" + userAccountNumber + ".  Currently has " + NickChecking.AccountBalance + " in checking account and "
+                            Console.WriteLine(NickChecking.AccountHolder + " has account #" + userID + ".  Currently has " + NickChecking.AccountBalance + " in checking account and "
                                 + NickSaving.AccountBalance + " in savings account.");
                             break;
                         }
@@ -60,11 +67,11 @@ namespace BankAccount
                             int userAccount = int.Parse(Console.ReadLine());
                             if (userAccount == 1)
                             {
-                                Console.WriteLine(NickChecking.CheckingAccountBalance);
+                                Console.WriteLine(NickChecking.AccountBalance);
                             }
                             if (userAccount == 2)
                             {
-                                Console.WriteLine(NickSaving.SavingsAccountBalance);
+                                Console.WriteLine(NickSaving.AccountBalance);
                             }
 
                             break;

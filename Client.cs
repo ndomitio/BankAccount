@@ -51,7 +51,7 @@ namespace BankAccount
         public void GoToBank ()
             {
             if ((hasSavingsAccount == true)||(hasCheckingAccount == true))
-            { Console.WriteLine("Time to go to the bank!"); }
+            { Console.WriteLine("\nTime to go to the bank!"); }
                     }
 
 }

@@ -45,6 +45,7 @@
     <Compile Include="BaseAccount.cs" />
     <Compile Include="CheckingAccount.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="ObjectListPractice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SavingsAccount.cs" />
